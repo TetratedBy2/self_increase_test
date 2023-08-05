@@ -39,8 +39,12 @@ function multUpg(i) {
 }
 
 function formatNumber(input) {
-    let formatResult = input.toPrecision(2)
-    return formatResult
+    if (input <= 0) return input
+    // let formatResult = input.toPrecision(2)
+    let power = new OmegaNum.floor(OmegaNum.log10(input))
+    let mantissa = input.div(OmegaNum.pow(10, power))
+    if (power < 3) return input
+    return power + "e" + mantissa
 }
 
 window.setInterval(function() {
