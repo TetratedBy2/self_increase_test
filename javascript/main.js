@@ -38,7 +38,7 @@ function multUpg(i) {
         if (i = 0 && game.number >= game.multUpgrades[0].cost) {
             game.increase.add(game.multUpgrades[0].effect)
             game.multUpgrades[0].bought.add(1)
-            game.multUpgrades[0].cost.pow(game.multUpgrades[0].bought)
+            game.multUpgrades[0].cost.pow(game.multUpgrades[0].bought.add(1))
         }
     }
 }
