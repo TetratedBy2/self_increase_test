@@ -44,7 +44,7 @@ function formatNumber(input) {
     let power = new OmegaNum.floor(OmegaNum.log10(input))
     let mantissa = input.divide(OmegaNum.pow(10, power))
     if (power < 3) return input
-    return power + "e" + mantissa
+    return mantissa.toPrecision(2) + "e" + power
 }
 
 window.setInterval(function() {
