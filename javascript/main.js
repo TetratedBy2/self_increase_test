@@ -4,7 +4,8 @@ var game = {
 }
 
 function increaseNumber() {
-    game.number = game.number.mul(game.increase.pow(0.05))
+    let translatedMult = game.increase.pow(0.05)
+    game.number = game.number.mul(translatedMult)
 }
 
 function updateText() {
@@ -14,6 +15,14 @@ function updateText() {
 function formatNumber(input) {
     let formatResult = input.toPrecision(2);
     return formatResult
+}
+
+function multUpg(i) {
+    for (i = 0; i < 2; i++) {
+        if (i = 1) {
+            game.increase.add(1)
+        }
+    }
 }
 
 window.setInterval(function() {
