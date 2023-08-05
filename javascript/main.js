@@ -25,6 +25,7 @@ function increaseNumber() {
 function updateText() {
     document.getElementById("current_number").innerHTML = formatNumber(game.number)
     document.getElementById("current_mult").innerHTML = formatNumber(game.increase)
+    document.getElementById("mult_upg_1").innerHTML = formatNumber(game.multUpgrades[0].cost)
 }
 
 function formatNumber(input) {
