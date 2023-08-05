@@ -1,6 +1,6 @@
 var game = {
-    number: new Decimal(1),
-    increase: new Decimal(2),
+    number: new OmegaNum(1),
+    increase: new OmegaNum(2),
 }
 
 function increaseNumber() {
@@ -12,11 +12,8 @@ function updateText() {
 }
 
 function formatNumber(input) {
-    let base = 10
-    let power = new Decimal(Decimal.floor(Decimal.log(input)))
-    let mantissa = new Decimal(input.div(base.pow(power)))
-    if (power < 3) return input
-    return mantissa + "e" + power
+    let formatResult = input.toFixed(2);
+    return formatResult
 }
 
 window.setInterval(function() {
