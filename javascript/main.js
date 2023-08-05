@@ -10,6 +10,7 @@ function increaseNumber() {
 
 function updateText() {
     document.getElementById("current_number").innerHTML = formatNumber(game.number)
+    document.getElementById("current_mult").innerHTML = formatNumber(game.increase)
 }
 
 function formatNumber(input) {
