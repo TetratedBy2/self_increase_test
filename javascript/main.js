@@ -18,7 +18,7 @@ for (i = 0; i < 1; i++) {
 }
 
 function increaseNumber() {
-    let translatedMult = game.increase.pow(0.05)
+    let translatedMult = game.increase.root(20)
     game.number = game.number.mul(translatedMult)
 }
 
