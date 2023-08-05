@@ -12,7 +12,7 @@ function updateText() {
 }
 
 function formatNumber(input) {
-    let formatResult = input.toFixed(2);
+    let formatResult = input.toPrecision(2);
     return formatResult
 }
 
