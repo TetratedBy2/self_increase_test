@@ -28,11 +28,6 @@ function updateText() {
     document.getElementById("mult_upg_1").innerHTML = formatNumber(game.multUpgrades[0].cost)
 }
 
-function formatNumber(input) {
-    let formatResult = input.toPrecision(2)
-    return formatResult
-}
-
 function multUpg(i) {
     for (i = 0; i < 1; i++) {
         if (i = 0 && game.number >= game.multUpgrades[0].cost) {
@@ -41,6 +36,11 @@ function multUpg(i) {
             game.multUpgrades[0].cost.pow(game.multUpgrades[0].bought.add(1))
         }
     }
+}
+
+function formatNumber(input) {
+    let formatResult = input.toPrecision(2)
+    return formatResult
 }
 
 window.setInterval(function() {
