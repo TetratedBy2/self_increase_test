@@ -1,6 +1,20 @@
 var game = {
     number: new OmegaNum(1),
     increase: new OmegaNum(2),
+    multUpgrades: [],
+}
+
+for (i = 0; i < 1; i++) {
+    let multiplierUpgrades = {
+        for (i = 0) {
+            let multUpg1 =  {
+                cost: new OmegaNum(1e10),
+                bought: new OmegaNum(0),
+                effect: new OmegaNum(1),
+            }
+        }
+    }
+    game.multUpgrades.push(multiplierUpgrades)
 }
 
 function increaseNumber() {
@@ -19,9 +33,11 @@ function formatNumber(input) {
 }
 
 function multUpg(i) {
-    for (i = 0; i < 2; i++) {
-        if (i = 1) {
-            game.increase.add(1)
+    for (i = 0; i < 1; i++) {
+        if (i = 0 && game.number >= game.multUpgrades[0].cost) {
+            game.increase.add(game.multUpgrades[0].effect)
+            game.multUpgrades[0].bought.add(1)
+            game.multUpgrades[0].cost.pow(game.multUpgrades[0].bought)
         }
     }
 }
