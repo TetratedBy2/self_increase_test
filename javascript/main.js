@@ -8,7 +8,7 @@ function increaseNumber() {
 }
 
 function updateText() {
-    document.getElementById("current_number").innerHTML = game.number
+    document.getElementById("current_number").innerHTML = formatNumber(game.number)
 }
 
 function formatNumber(input) {
@@ -19,5 +19,4 @@ function formatNumber(input) {
 window.setInterval(function() {
     increaseNumber();
     updateText();
-    formatNumber();
 }, 20)
