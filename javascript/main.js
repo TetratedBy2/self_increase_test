@@ -12,8 +12,9 @@ function updateText() {
 }
 
 function formatNumber(input) {
-    let power = new Decimal(floor(log(input)))
-    let mantissa = new Decimal(input / pow(10, power))
+    let base = 10
+    let power = new Decimal(Decimal.floor(Decimal.log(input)))
+    let mantissa = new Decimal(input.div(base.pow(power)))
     if (power < 3) return input
     return mantissa + "e" + power
 }
