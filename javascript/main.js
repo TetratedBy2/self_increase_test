@@ -1,5 +1,3 @@
-import Decimal from "decimal.js"
-
 var game = {
     number: new Decimal(1),
     increase: new Decimal(2),
