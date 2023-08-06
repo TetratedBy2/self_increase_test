@@ -10,6 +10,7 @@ var game = {
 
 function increaseNumber() {
     let translatedMult = game.increase
+    if (game.mainUpg1 >= OmegaNum(1)) translatedMult.add(game.mainUpg1)
     game.number = game.number.mul(translatedMult.root(20))
 }
 
