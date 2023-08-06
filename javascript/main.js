@@ -6,7 +6,7 @@ var game = {
 
 for (i = 0; i < 1; i++) {
     let multiplierUpgrades = {
-        cost: new OmegaNum(1e10).pow(i.add(1)),
+        cost: new OmegaNum(1e10).pow([i].add(1)),
         bought: new OmegaNum(0),
         effect: new OmegaNum(1),
     }
