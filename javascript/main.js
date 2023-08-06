@@ -2,7 +2,7 @@ var game = {
     number: new OmegaNum(1),
     increase: new OmegaNum(2),
     mainUpg1: new OmegaNum(0),
-    mainUpg1Cost: new OmegaNum(1e10)
+    mainUpg1Cost: new OmegaNum(1e10),
 
     prestigePoints: new OmegaNum(0),
     prestigePointsEffect: new OmegaNum(1),
