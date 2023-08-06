@@ -2,19 +2,24 @@ var game = {
     number: new OmegaNum(1),
     increase: new OmegaNum(2),
     multUpgrades: [],
+
+    prestigePoints: new OmegaNum(0),
+    prestigePointsEffect: new OmegaNum(1),
 }
 
 for (i = 1; i < 2; i++) {
     let multiplierUpgrades = {
         cost: new OmegaNum(1e10).pow(i),
         bought: new OmegaNum(0),
-        effect: new OmegaNum(1),
+        effect: new OmegaNum(0),
     }
     game.multUpgrades.push(multiplierUpgrades)
 }
 
 function increaseNumber() {
-    let translatedMult = game.increase.root(20)
+    let translatedMult = new OmegaNum(2)
+    if (game.multUpgrades[1].bought >= 1) translatedMult.add(game.multUpgrades[1].effect)
+    translatedMult
     game.number = game.number.mul(translatedMult)
 }
 
@@ -27,7 +32,7 @@ function updateText() {
 function multUpg(i) {
     for (i = 1; i < 2; i++) {
         if (i = 1 && game.number >= game.multUpgrades[1].cost) {
-            game.increase.add(game.multUpgrades[1].effect)
+            game.multUpgrades[1].effect.add(1)
             game.multUpgrades[1].bought.add(1)
             game.multUpgrades[1].cost.pow(game.multUpgrades[1].bought.add(1))
         }
