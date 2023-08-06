@@ -17,9 +17,9 @@ for (i = 1; i < 2; i++) {
 }
 
 function increaseNumber() {
-    let translatedMult = new OmegaNum(2)
-    if (game.multUpgrades[1].bought >= 1) translatedMult.add(game.multUpgrades[1].effect)
-    translatedMult
+    let translatedMult = game.increase
+    if (game.multUpgrades[1].bought >= 1) translatedMult = translatedMult.add(game.multUpgrades[1].effect)
+    if (game.prestigePoints >= 1) translatedMult.mul(game.prestigePointsEffect)
     game.number = game.number.mul(translatedMult)
 }
 
