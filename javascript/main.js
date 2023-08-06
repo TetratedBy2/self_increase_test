@@ -1,42 +1,22 @@
 var game = {
     number: new OmegaNum(1),
     increase: new OmegaNum(2),
-    multUpgrades: [],
+    mainUpg1: new OmegaNum(0),
+    mainUpg1Cost: new OmegaNum(1e10)
 
     prestigePoints: new OmegaNum(0),
     prestigePointsEffect: new OmegaNum(1),
 }
 
-for (i = 1; i < 2; i++) {
-    let multiplierUpgrades = {
-        cost: new OmegaNum(1e10).pow(i),
-        bought: new OmegaNum(0),
-        effect: new OmegaNum(0),
-    }
-    game.multUpgrades.push(multiplierUpgrades)
-}
-
 function increaseNumber() {
     let translatedMult = game.increase
-    if (game.multUpgrades[1].bought >= 1) translatedMult = translatedMult.add(game.multUpgrades[1].effect)
-    if (game.prestigePoints >= 1) translatedMult.mul(game.prestigePointsEffect)
-    game.number = game.number.mul(translatedMult)
+    game.number = game.number.mul(translatedMult.root(20))
 }
 
 function updateText() {
     document.getElementById("current_number").innerHTML = formatNumber(game.number)
     document.getElementById("current_mult").innerHTML = formatNumber(game.increase)
-    document.getElementById("mult_upg_1").innerHTML = formatNumber(game.multUpgrades[1].cost)
-}
-
-function multUpg(i) {
-    for (i = 1; i < 2; i++) {
-        if (i = 1 && game.number >= game.multUpgrades[1].cost) {
-            game.multUpgrades[1].effect.add(1)
-            game.multUpgrades[1].bought.add(1)
-            game.multUpgrades[1].cost.pow(game.multUpgrades[1].bought.add(1))
-        }
-    }
+    document.getElementById("mult_upg_1").innerHTML = formatNumber(game.mainUpg1Cost)
 }
 
 function formatNumber(input) {
